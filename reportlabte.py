@@ -65,7 +65,6 @@ with pdf_tab:
     if st.session_state.get('editor_content'):
         try:
             with st.spinner('Generating PDF preview...'):
-                # Wrap the content in proper HTML structure
                 html_content = f'''
                 <!DOCTYPE html>
                 <html lang="en">
@@ -74,7 +73,7 @@ with pdf_tab:
                 </body>
                 </html>
                 '''
-                pdf = fused.run("fsh_p739UuQp4odTwtoGKdgX6", html=html_content, ww=1)
+                pdf = fused.run("fsh_4VG6O74lPFHd2yFet0pyRf", html=html_content)
                 content = pdf['pdf_bytes'].iloc[0]
             
             col1, col2 = st.columns([1, 3])
